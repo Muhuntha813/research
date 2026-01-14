@@ -1,0 +1,287 @@
+/* TankProfileCard Styles */
+
+.tank-profile-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 2px solid rgba(32, 178, 170, 0.3);
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.dark .tank-profile-card {
+  background: rgba(7, 36, 63, 0.8);
+  border-color: rgba(32, 178, 170, 0.5);
+}
+
+.tank-profile-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.tank-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(32, 178, 170, 0.2);
+}
+
+.tank-profile-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  background: linear-gradient(135deg, #20B2AA, #4682B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .tank-profile-title {
+  color: #e2e8f0;
+}
+
+.tank-profile-species-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding: 0.25rem 0.75rem;
+  background: rgba(32, 178, 170, 0.1);
+  border-radius: 12px;
+}
+
+.tank-profile-ranges {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tank-profile-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tank-profile-metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tank-profile-metric-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.dark .tank-profile-metric-label {
+  color: #e2e8f0;
+}
+
+.tank-profile-metric-range {
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.tank-profile-metric-conflict {
+  font-size: 0.875rem;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.tank-profile-range-visualization {
+  position: relative;
+  height: 60px;
+  background: rgba(32, 178, 170, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tank-profile-scale {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tank-profile-species-band {
+  position: absolute;
+  top: 10px;
+  height: 20px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.tank-profile-species-band:hover {
+  opacity: 0.9;
+}
+
+.tank-profile-merged-band {
+  position: absolute;
+  top: 35px;
+  height: 10px;
+  border: 2px solid;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tank-profile-conflict-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tank-profile-recommendation {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.tank-profile-recommendation-label {
+  font-weight: 500;
+}
+
+.tank-profile-recommendation-range {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.tank-profile-conflicts {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.tank-profile-conflicts-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ef4444;
+  margin: 0 0 1rem 0;
+}
+
+.tank-profile-conflict-item {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.dark .tank-profile-conflict-item {
+  background: rgba(7, 36, 63, 0.5);
+}
+
+.tank-profile-conflict-metric {
+  font-weight: 600;
+  color: #ef4444;
+  margin-bottom: 0.25rem;
+}
+
+.tank-profile-conflict-species {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.tank-profile-conflict-ranges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tank-profile-conflict-range {
+  padding: 0.25rem 0.5rem;
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.tank-profile-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tank-profile-apply-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #20B2AA, #4682B4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tank-profile-apply-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.4);
+  transform: translateY(-2px);
+}
+
+.tank-profile-apply-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tank-profile-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.tank-profile-preview-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.dark .tank-profile-preview-content {
+  background: rgba(7, 36, 63, 0.95);
+}
+
+.tank-profile-preview-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.tank-profile-preview-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(32, 178, 170, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tank-profile-preview-actions button:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(32, 178, 170, 0.5);
+}
+

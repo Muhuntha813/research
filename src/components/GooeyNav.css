@@ -1,0 +1,367 @@
+:root {
+  --linear-ease: linear(
+    0,
+    0.068,
+    0.19 2.7%,
+    0.804 8.1%,
+    1.037,
+    1.199 13.2%,
+    1.245,
+    1.27 15.8%,
+    1.274,
+    1.272 17.4%,
+    1.249 19.1%,
+    0.996 28%,
+    0.949,
+    0.928 33.3%,
+    0.926,
+    0.933 36.8%,
+    1.001 45.6%,
+    1.013,
+    1.019 50.8%,
+    1.018 54.4%,
+    1 63.1%,
+    0.995 68%,
+    1.001 85%,
+    1
+  );
+
+  /* Sea blue color palette */
+  --color-1: #20B2AA; /* Light Sea Green */
+  --color-2: #40E0D0; /* Turquoise */
+  --color-3: #00CED1; /* Dark Turquoise */
+  --color-4: #4682B4; /* Steel Blue */
+  --sea-blue-active: #20B2AA;
+  --sea-blue-bg: #008B8B;
+  --sea-blue-gradient-start: #20B2AA;
+  --sea-blue-gradient-end: #4682B4;
+}
+
+.gooey-nav-container {
+  position: relative;
+  padding: 1rem 0;
+  background: transparent;
+  border-radius: 12px;
+  margin: 0.5rem 0;
+  box-shadow: none;
+}
+
+.gooey-nav-container nav {
+  display: flex;
+  position: relative;
+  transform: translate3d(0, 0, 0.01px);
+  justify-content: center;
+}
+
+.gooey-nav-container nav ul {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  color: #2c3e50;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gooey-nav-container nav ul li {
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(32, 178, 170, 0.2);
+  box-shadow: none;
+  color: #2c3e50;
+  font-weight: 500;
+  text-transform: capitalize;
+  backdrop-filter: none;
+  width: 120px;
+  min-width: 120px;
+  text-align: center;
+  animation: none;
+  overflow: visible;
+}
+
+.gooey-nav-container nav ul li:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(32, 178, 170, 0.35);
+  box-shadow: none;
+  transform: none;
+}
+
+.gooey-nav-container nav ul li a {
+  display: block;
+  padding: 0.6em 1em;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+
+.gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
+  outline: 2px solid rgba(32, 178, 170, 0.6);
+  outline-offset: 2px;
+  border-color: rgba(32, 178, 170, 0.6);
+  box-shadow: none;
+}
+
+.gooey-nav-container nav ul li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--sea-blue-gradient-start), var(--sea-blue-gradient-end));
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  z-index: -1;
+  box-shadow: 0 4px 15px rgba(32, 178, 170, 0.4);
+  border: 2px solid transparent;
+}
+
+.gooey-nav-container nav ul li.active {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  animation: none;
+}
+
+.gooey-nav-container nav ul li.active {
+  overflow: visible;
+}
+
+.gooey-nav-container nav ul li.active a {
+  color: white !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.gooey-nav-container nav ul li.active::after {
+  opacity: 1;
+  transform: scale(1);
+  border-color: rgba(32, 178, 170, 0.8);
+  box-shadow: none;
+}
+
+.gooey-nav-container .effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gooey-nav-container .effect.text {
+  color: transparent;
+  transition: color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  font-weight: 500;
+  text-transform: capitalize;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gooey-nav-container .effect.text.active {
+  color: transparent;
+  text-shadow: none;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gooey-nav-container .effect.filter {
+  filter: blur(7px) contrast(100) blur(0);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.gooey-nav-container .effect.filter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.gooey-nav-container .effect.filter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--sea-blue-gradient-start), var(--sea-blue-gradient-end));
+  transform: scale(0);
+  opacity: 0;
+  z-index: -1;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.gooey-nav-container .effect.active::after {
+  animation: pill 0.3s ease both;
+}
+
+@keyframes pill {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.particle,
+.point {
+  display: block;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transform-origin: center;
+}
+
+.particle {
+  --time: 5s;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  animation: particle calc(var(--time)) ease 1 -350ms;
+}
+
+.point {
+  background: var(--color);
+  opacity: 1;
+  animation: point calc(var(--time)) ease 1 -350ms;
+}
+
+@keyframes particle {
+  0% {
+    transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x)), calc(var(--end-y)));
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+
+@keyframes point {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  25% {
+    transform: scale(calc(var(--scale) * 0.25));
+  }
+
+  38% {
+    opacity: 1;
+  }
+
+  65% {
+    transform: scale(var(--scale));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: scale(var(--scale));
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Dark mode support */
+.dark .gooey-nav-container {
+  background: transparent;
+}
+
+.dark .gooey-nav-container nav ul {
+  color: #e2e8f0;
+}
+
+.dark .gooey-nav-container nav ul li {
+  color: #e2e8f0;
+  background: rgba(7, 36, 63, 0.4);
+  border-color: rgba(32, 178, 170, 0.25);
+  box-shadow: none;
+  animation: none;
+}
+
+.dark .gooey-nav-container nav ul li:hover:not(.active) {
+  background: rgba(7, 36, 63, 0.6);
+  border-color: rgba(32, 178, 170, 0.4);
+  box-shadow: none;
+}
+
+.dark .gooey-nav-container nav ul li.active a {
+  color: white !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+
+.dark .gooey-nav-container nav ul li.active {
+  background: transparent;
+  border-color: transparent;
+}
+
+.dark .gooey-nav-container .effect.text {
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dark .gooey-nav-container .effect.filter::before {
+  background: transparent;
+}
+
+

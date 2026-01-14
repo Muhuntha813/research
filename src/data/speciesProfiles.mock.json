@@ -1,0 +1,211 @@
+[
+  {
+    "id": "goldfish",
+    "name": "Goldfish",
+    "icon": "🐟",
+    "description": "Cold-tolerant ornamental fish.",
+    "ranges": {
+      "ph": [7.0, 8.4],
+      "temp": [18, 22],
+      "do": [6, 30],
+      "tds": [150, 400],
+      "ntu": [0, 10]
+    },
+    "critical_ranges": {
+      "ph": [6.5, 8.8],
+      "temp": [15, 26]
+    },
+    "feed_schedule": {
+      "times": ["09:00", "18:00"],
+      "portions": "1-2"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.0,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "betta",
+    "name": "Betta",
+    "icon": "🐠",
+    "description": "Tropical labyrinth fish, prefers warm still water.",
+    "ranges": {
+      "ph": [6.5, 7.5],
+      "temp": [24, 28],
+      "do": [5, 30],
+      "tds": [100, 300],
+      "ntu": [0, 5]
+    },
+    "critical_ranges": {
+      "ph": [6.0, 8.0],
+      "temp": [22, 30]
+    },
+    "feed_schedule": {
+      "times": ["10:00", "19:00"],
+      "portions": "small"
+    },
+    "calibration_presets": {
+      "ph_offset": -0.2,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "guppy",
+    "name": "Guppy",
+    "icon": "🦈",
+    "description": "Hardy livebearer, adaptable to various conditions.",
+    "ranges": {
+      "ph": [6.8, 7.8],
+      "temp": [22, 26],
+      "do": [5, 30],
+      "tds": [150, 400],
+      "ntu": [0, 10]
+    },
+    "critical_ranges": {
+      "ph": [6.5, 8.2],
+      "temp": [20, 28]
+    },
+    "feed_schedule": {
+      "times": ["09:00", "17:00"],
+      "portions": "2-3"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.0,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "corydoras",
+    "name": "Corydoras",
+    "icon": "🐡",
+    "description": "Peaceful bottom-dwelling catfish.",
+    "ranges": {
+      "ph": [6.0, 8.0],
+      "temp": [22, 26],
+      "do": [5, 30],
+      "tds": [100, 400],
+      "ntu": [0, 15]
+    },
+    "critical_ranges": {
+      "ph": [5.5, 8.5],
+      "temp": [20, 28]
+    },
+    "feed_schedule": {
+      "times": ["08:00", "20:00"],
+      "portions": "sinking"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.0,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "pleco",
+    "name": "Pleco",
+    "icon": "🐋",
+    "description": "Large algae-eating catfish.",
+    "ranges": {
+      "ph": [6.5, 7.5],
+      "temp": [23, 27],
+      "do": [5, 30],
+      "tds": [150, 500],
+      "ntu": [0, 20]
+    },
+    "critical_ranges": {
+      "ph": [6.0, 8.0],
+      "temp": [21, 29]
+    },
+    "feed_schedule": {
+      "times": ["21:00"],
+      "portions": "algae wafers"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.0,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "neon_tetra",
+    "name": "Neon Tetra",
+    "icon": "🐟",
+    "description": "Small schooling fish, prefers soft acidic water.",
+    "ranges": {
+      "ph": [5.5, 7.0],
+      "temp": [20, 26],
+      "do": [5, 30],
+      "tds": [50, 200],
+      "ntu": [0, 5]
+    },
+    "critical_ranges": {
+      "ph": [5.0, 7.5],
+      "temp": [18, 28]
+    },
+    "feed_schedule": {
+      "times": ["09:00", "18:00"],
+      "portions": "tiny"
+    },
+    "calibration_presets": {
+      "ph_offset": -0.5,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "angelfish",
+    "name": "Angelfish",
+    "icon": "🐠",
+    "description": "Elegant cichlid, requires stable water conditions.",
+    "ranges": {
+      "ph": [6.5, 7.5],
+      "temp": [24, 28],
+      "do": [5, 30],
+      "tds": [100, 300],
+      "ntu": [0, 10]
+    },
+    "critical_ranges": {
+      "ph": [6.0, 8.0],
+      "temp": [22, 30]
+    },
+    "feed_schedule": {
+      "times": ["10:00", "19:00"],
+      "portions": "2-3"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.0,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  },
+  {
+    "id": "molly",
+    "name": "Molly/Platy",
+    "icon": "🐡",
+    "description": "Hardy livebearers, prefer slightly alkaline water.",
+    "ranges": {
+      "ph": [7.0, 8.5],
+      "temp": [22, 26],
+      "do": [5, 30],
+      "tds": [200, 500],
+      "ntu": [0, 15]
+    },
+    "critical_ranges": {
+      "ph": [6.5, 9.0],
+      "temp": [20, 28]
+    },
+    "feed_schedule": {
+      "times": ["09:00", "17:00"],
+      "portions": "2-3"
+    },
+    "calibration_presets": {
+      "ph_offset": 0.2,
+      "temp_offset": 0.0,
+      "do_calibration": 1.0
+    }
+  }
+]
+

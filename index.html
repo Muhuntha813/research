@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Fish Aquarium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              ocean: {
+                50: '#eef7ff',
+                100: '#d8efff',
+                200: '#b6e0ff',
+                300: '#89cdff',
+                400: '#5db7ff',
+                500: '#2a9df4',
+                600: '#1f79c5',
+                700: '#165796',
+                800: '#0e3a67',
+                900: '#07243f',
+              },
+            },
+            boxShadow: {
+              soft: '0 4px 20px rgba(0,0,0,0.08)',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Inline critical styles with class-based dark mode */
+      .card{border-radius:1rem;background-color:rgba(255,255,255,0.80);backdrop-filter:blur(6px);border:2px solid #60a5fa;box-shadow:0 10px 28px rgba(0,0,0,0.12),0 0 16px rgba(42,157,244,0.40);transition:box-shadow 200ms ease,transform 200ms ease}
+      .card:hover{box-shadow:0 14px 36px rgba(0,0,0,0.16),0 0 22px rgba(42,157,244,0.55);transform:translateY(-2px)}
+      .card-strong{border-width:3px;box-shadow:0 12px 34px rgba(0,0,0,0.14),0 0 22px rgba(42,157,244,0.55)}
+      .card-outline{border:2px solid #60a5fa;box-shadow:0 0 10px rgba(42,157,244,0.28);background-clip:padding-box}
+      .dark .card{background-color:rgba(7,36,63,0.65);border-color:#1f79c5;box-shadow:0 10px 28px rgba(0,0,0,0.45),0 0 18px rgba(31,121,197,0.55)}
+      .dark .card-outline{border-color:#1f79c5;box-shadow:0 0 12px rgba(31,121,197,0.45)}
+      .pulse-glow{animation:cardGlow 800ms ease-out}
+      @keyframes cardGlow{0%{box-shadow:0 10px 28px rgba(0,0,0,0.12),0 0 16px rgba(42,157,244,0.40)}50%{box-shadow:0 16px 40px rgba(0,0,0,0.18),0 0 28px rgba(42,157,244,0.70)}100%{box-shadow:0 10px 28px rgba(0,0,0,0.12),0 0 16px rgba(42,157,244,0.40)}}
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

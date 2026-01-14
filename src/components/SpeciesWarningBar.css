@@ -1,0 +1,195 @@
+/* SpeciesWarningBar Styles */
+
+.species-warning-bar {
+  position: fixed;
+  top: 100px;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  pointer-events: none;
+}
+
+.species-warning-chip {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 2px solid;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+}
+
+.dark .species-warning-chip {
+  background: rgba(7, 36, 63, 0.95);
+}
+
+.species-warning-chip-warning {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.dark .species-warning-chip-warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(7, 36, 63, 0.95));
+}
+
+.species-warning-chip-critical {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(255, 255, 255, 0.95));
+  animation: pulse-critical 2s ease-in-out infinite;
+}
+
+.dark .species-warning-chip-critical {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(7, 36, 63, 0.95));
+}
+
+@keyframes pulse-critical {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(239, 68, 68, 0.5);
+  }
+}
+
+.species-warning-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.species-warning-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.species-warning-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.species-warning-species {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.dark .species-warning-species {
+  color: #e2e8f0;
+}
+
+.species-warning-severity-badge {
+  padding: 0.125rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.species-warning-chip-warning .species-warning-severity-badge {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.species-warning-chip-critical .species-warning-severity-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.species-warning-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.dark .species-warning-message {
+  color: #9ca3af;
+}
+
+.species-warning-action {
+  font-size: 0.8rem;
+  color: #3b82f6;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.species-warning-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.species-warning-btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.species-warning-btn-accept {
+  background: linear-gradient(135deg, #20B2AA, #4682B4);
+  color: white;
+  border-color: rgba(32, 178, 170, 0.8);
+}
+
+.species-warning-btn-accept:hover {
+  box-shadow: 0 2px 8px rgba(32, 178, 170, 0.4);
+  transform: translateY(-1px);
+}
+
+.species-warning-btn-dismiss {
+  background: rgba(255, 255, 255, 0.8);
+  color: #6b7280;
+  border-color: rgba(107, 114, 128, 0.3);
+}
+
+.species-warning-btn-dismiss:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #2c3e50;
+}
+
+.dark .species-warning-btn-dismiss {
+  background: rgba(7, 36, 63, 0.8);
+  color: #9ca3af;
+  border-color: rgba(156, 163, 175, 0.3);
+}
+
+.dark .species-warning-btn-dismiss:hover {
+  background: rgba(7, 36, 63, 1);
+  color: #e2e8f0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .species-warning-bar {
+    right: 0.5rem;
+    left: 0.5rem;
+    max-width: none;
+  }
+
+  .species-warning-chip {
+    min-width: auto;
+  }
+
+  .species-warning-actions {
+    flex-direction: row;
+  }
+
+  .species-warning-btn {
+    flex: 1;
+  }
+}
+

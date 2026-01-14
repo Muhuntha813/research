@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: Smart Fish Aquarium API
+  version: 0.1.0
+servers:
+  - url: http://localhost:5173
+paths:
+  /api/v1/live:
+    get:
+      summary: Live combined payload (polling fallback)
+      responses:
+        '200': { description: OK }
+  /api/v1/history:
+    get:
+      summary: History points for metric
+      parameters:
+        - in: query
+          name: metric
+          schema: { type: string }
+        - in: query
+          name: from
+          schema: { type: string, format: date-time }
+        - in: query
+          name: to
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metric: { type: string }
+                  points:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ts: { type: string, format: date-time }
+                        value: { type: number }
+  /api/v1/rules:
+    get:
+      summary: Get rules
+      responses: { '200': { description: OK } }
+    post:
+      summary: Upsert rule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses: { '200': { description: OK } }
+  /api/v1/rules/simulate:
+    post:
+      summary: Simulate a rule over a time window
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ruleId: { type: string }
+                from: { type: string, format: date-time }
+                to: { type: string, format: date-time }
+      responses: { '200': { description: OK } }
+  /api/v1/ai/events:
+    get:
+      summary: List AI events
+      responses: { '200': { description: OK } }
+    post:
+      summary: Submit AI event
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type: { type: string }
+                score: { type: number }
+                frame: { type: string }
+                ts: { type: string, format: date-time }
+      responses: { '200': { description: OK } }
+  /api/v1/predict:
+    post:
+      summary: Predict unsafe probability and recommendation
+      responses: { '200': { description: OK } }
+  /api/v1/calibrate/{metric}:
+    post:
+      summary: Store calibration for metric
+      parameters:
+        - in: path
+          name: metric
+          required: true
+          schema: { type: string }
+      responses: { '200': { description: OK } }
+  /api/v1/notify/test:
+    post:
+      summary: Send test notification
+      responses: { '200': { description: OK } }

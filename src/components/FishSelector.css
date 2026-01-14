@@ -1,0 +1,300 @@
+/* FishSelector Styles - Glassmorphism with sea blue theme */
+
+.fish-selector-trigger {
+  position: relative;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(32, 178, 170, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.fish-selector-trigger:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(32, 178, 170, 0.5);
+  transform: translateY(-2px);
+}
+
+.fish-selector-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+}
+
+.fish-selector-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 600px;
+}
+
+.fish-selector-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 2px solid rgba(32, 178, 170, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.dark .fish-selector-card {
+  background: rgba(7, 36, 63, 0.95);
+  border-color: rgba(32, 178, 170, 0.5);
+}
+
+.fish-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(32, 178, 170, 0.2);
+  background: linear-gradient(135deg, rgba(32, 178, 170, 0.1), rgba(70, 130, 180, 0.1));
+}
+
+.fish-selector-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  background: linear-gradient(135deg, #20B2AA, #4682B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .fish-selector-title {
+  color: #e2e8f0;
+}
+
+.fish-selector-close {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #2c3e50;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.fish-selector-close:hover {
+  background: rgba(32, 178, 170, 0.1);
+  color: #20B2AA;
+}
+
+.dark .fish-selector-close {
+  color: #e2e8f0;
+}
+
+.fish-selector-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.fish-selector-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.fish-selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fish-selector-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(32, 178, 170, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fish-selector-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(32, 178, 170, 0.4);
+  transform: translateX(4px);
+}
+
+.fish-selector-item.selected {
+  background: linear-gradient(135deg, rgba(32, 178, 170, 0.15), rgba(70, 130, 180, 0.15));
+  border-color: rgba(32, 178, 170, 0.6);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+}
+
+.dark .fish-selector-item {
+  background: rgba(7, 36, 63, 0.6);
+  border-color: rgba(32, 178, 170, 0.3);
+}
+
+.dark .fish-selector-item:hover {
+  background: rgba(7, 36, 63, 0.8);
+  border-color: rgba(32, 178, 170, 0.5);
+}
+
+.dark .fish-selector-item.selected {
+  background: linear-gradient(135deg, rgba(32, 178, 170, 0.2), rgba(70, 130, 180, 0.2));
+  border-color: rgba(32, 178, 170, 0.7);
+}
+
+.fish-selector-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #20B2AA;
+}
+
+.fish-selector-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.fish-selector-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fish-selector-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.dark .fish-selector-name {
+  color: #e2e8f0;
+}
+
+.fish-selector-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.dark .fish-selector-description {
+  color: #9ca3af;
+}
+
+.fish-selector-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(32, 178, 170, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dark .fish-selector-footer {
+  background: rgba(7, 36, 63, 0.5);
+}
+
+.fish-selector-selection-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.dark .fish-selector-selection-info {
+  color: #9ca3af;
+}
+
+.fish-selector-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.fish-selector-btn {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 0.875rem;
+}
+
+.fish-selector-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fish-selector-btn-secondary {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(32, 178, 170, 0.3);
+  color: #2c3e50;
+}
+
+.fish-selector-btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(32, 178, 170, 0.5);
+  transform: translateY(-1px);
+}
+
+.fish-selector-btn-primary {
+  background: linear-gradient(135deg, #20B2AA, #4682B4);
+  color: white;
+  border-color: rgba(32, 178, 170, 0.8);
+}
+
+.fish-selector-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.4);
+  transform: translateY(-1px);
+}
+
+.dark .fish-selector-btn-secondary {
+  background: rgba(7, 36, 63, 0.8);
+  border-color: rgba(32, 178, 170, 0.4);
+  color: #e2e8f0;
+}
+
+.dark .fish-selector-btn-secondary:hover:not(:disabled) {
+  background: rgba(7, 36, 63, 1);
+  border-color: rgba(32, 178, 170, 0.6);
+}
+
+/* Scrollbar styling */
+.fish-selector-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fish-selector-content::-webkit-scrollbar-track {
+  background: rgba(32, 178, 170, 0.1);
+  border-radius: 4px;
+}
+
+.fish-selector-content::-webkit-scrollbar-thumb {
+  background: rgba(32, 178, 170, 0.4);
+  border-radius: 4px;
+}
+
+.fish-selector-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(32, 178, 170, 0.6);
+}
+
